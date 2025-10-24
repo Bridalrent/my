@@ -4,11 +4,11 @@
 }
 
 :root {
-    --primary-gold: #b08900; /* Darker gold for better contrast */
+    --primary-gold: #b08900;
     --hover-gold: #a57c00;
     --dark-brown: #3b2f2f;
     --light-bg: #fffaf5;
-    --hero-content-width: 360px; /* Reduced from 450px */
+    --hero-content-width: 280px; /* Tighter for live site */
 }
 
 body {
@@ -79,37 +79,38 @@ nav a:hover {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6); /* Increased opacity */
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .hero-content {
     position: relative;
     max-width: var(--hero-content-width);
+    width: fit-content; /* Hugs content tightly */
     margin: 0 auto;
-    padding: 1rem; /* Reduced from 1.5rem */
+    padding: 0.5rem; /* Minimal padding */
     text-align: center;
     animation: fadeIn 1.5s ease;
 }
 
 .hero h1 {
-    font-size: 2.2rem; /* Reduced from 2.5rem */
-    margin-bottom: 1rem;
-    max-width: 70%; /* Tighter constraint */
+    font-size: 1.8rem; /* Compact */
+    margin-bottom: 0.5rem;
+    max-width: 60%; /* Short lines */
     margin-left: auto;
     margin-right: auto;
 }
 
 .hero p {
-    font-size: 0.9rem; /* Reduced from 1rem */
-    margin-bottom: 2rem;
-    max-width: 70%; /* Tighter constraint */
+    font-size: 0.85rem; /* Compact */
+    margin-bottom: 1.5rem;
+    max-width: 60%; /* Short lines */
     margin-left: auto;
     margin-right: auto;
 }
 
 .btn {
     display: inline-block;
-    padding: 0.7rem 1.8rem;
+    padding: 0.6rem 1.5rem; /* Slightly smaller button */
     background-color: var(--primary-gold);
     color: white;
     border-radius: 25px;
@@ -237,27 +238,27 @@ footer a:hover {
         padding: 1rem 2rem;
     }
     .hero-content {
-        max-width: 320px; /* Reduced from 400px */
-        padding: 1rem;
+        max-width: 260px;
+        padding: 0.5rem;
     }
     .hero h1 {
-        font-size: 1.8rem; /* Reduced from 2rem */
+        font-size: 1.6rem;
     }
     .hero p {
-        font-size: 0.85rem; /* Reduced from 0.9rem */
+        font-size: 0.8rem;
     }
 }
 
 @media (max-width: 768px) {
     .hero-content {
-        max-width: 80%; /* Slightly tighter */
-        padding: 1rem;
+        max-width: 70%; /* Tighter on tablet */
+        padding: 0.5rem;
     }
     .hero h1 {
-        font-size: 1.6rem; /* Reduced from 2rem */
+        font-size: 1.4rem;
     }
     .hero p {
-        font-size: 0.8rem; /* Reduced from 0.9rem */
+        font-size: 0.75rem;
     }
 }
 
@@ -266,14 +267,14 @@ footer a:hover {
         padding: 1rem 1.5rem;
     }
     .hero-content {
-        max-width: 80%;
-        padding: 0.8rem;
+        max-width: 70%;
+        padding: 0.4rem;
     }
     .hero h1 {
-        font-size: 1.4rem; /* Reduced from 1.8rem */
+        font-size: 1.2rem;
     }
     .hero p {
-        font-size: 0.75rem; /* Reduced from 0.85rem */
+        font-size: 0.7rem;
     }
     .jewelry-grid {
         grid-template-columns: 1fr;
