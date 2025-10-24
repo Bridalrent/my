@@ -200,13 +200,14 @@ footer a {
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 1rem 2rem;
+    .hero-content {
+        max-width: 90%;  /* Makes the content more flexible on mobile */
+        padding: 1.5rem;  /* Reduces padding on mobile */
     }
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.2rem;  /* Makes the heading a bit smaller */
     }
     .cta-button {
-        padding: 0.7rem 1.6rem;
+        padding: 0.7rem 1.6rem;  /* Adjust button padding */
     }
 }
