@@ -1,15 +1,27 @@
 /* ====== GENERAL ====== */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-gold: #b08900; /* Darker gold for better contrast */
+    --hover-gold: #a57c00;
+    --dark-brown: #3b2f2f;
+    --light-bg: #fffaf5;
+    --hero-content-width: 450px;
+}
+
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #fffaf5;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: var(--light-bg);
     color: #333;
     line-height: 1.6;
 }
 
 h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    color: #3b2f2f;
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--dark-brown);
 }
 
 a {
@@ -32,10 +44,11 @@ a {
 
 .logo h2 {
     font-weight: 700;
-    color: #c6a664;
+    color: var(--primary-gold);
 }
+
 .logo span {
-    color: #a57c00;
+    color: var(--hover-gold);
 }
 
 nav a {
@@ -47,13 +60,13 @@ nav a {
 
 nav a.active,
 nav a:hover {
-    color: #c6a664;
+    color: var(--primary-gold);
 }
 
 /* ====== HERO ====== */
 .hero {
     background: url('https://images.unsplash.com/photo-1516637090014-cb1ab0d08fc7?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    height: 85vh;
+    min-height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,38 +79,46 @@ nav a:hover {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
     position: relative;
-    max-width: 600px;  /* limits the width */
-    margin: 0 auto;    /* centers horizontally */
-    padding: 2rem;
+    max-width: var(--hero-content-width);
+    margin: 0 auto;
+    padding: 1.5rem;
     text-align: center;
     animation: fadeIn 1.5s ease;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.cta-button {
-    background-color: #c6a664;
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.8rem;
+    background-color: var(--primary-gold);
     color: white;
-    padding: 0.8rem 2rem;
-    border-radius: 30px;
-    font-weight: bold;
+    border-radius: 25px;
+    font-weight: 500;
     transition: background-color 0.3s;
 }
-.cta-button:hover {
-    background-color: #a57c00;
+
+.btn:hover {
+    background-color: var(--hover-gold);
 }
 
 /* ====== CONTAINER ====== */
@@ -110,8 +131,9 @@ nav a:hover {
     text-align: center;
     margin-bottom: 4rem;
 }
+
 .intro span {
-    color: #c6a664;
+    color: var(--primary-gold);
 }
 
 /* ====== JEWELRY SECTIONS ====== */
@@ -122,8 +144,9 @@ nav a:hover {
 .jewelry-section h2 {
     text-align: center;
     margin-bottom: 0.5rem;
-    color: #3b2f2f;
+    color: var(--dark-brown);
 }
+
 .jewelry-section p {
     text-align: center;
     max-width: 600px;
@@ -140,19 +163,20 @@ nav a:hover {
 .jewelry-item {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     text-align: center;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .jewelry-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
 }
 
 .jewelry-item img {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 4/3;
     object-fit: cover;
 }
 
@@ -161,27 +185,19 @@ nav a:hover {
 }
 
 .price {
-    color: #a57c00;
+    color: var(--primary-gold);
     font-weight: 600;
 }
 
-.btn {
-    display: inline-block;
-    margin: 1rem 0 1.5rem;
-    padding: 0.6rem 1.4rem;
-    background-color: #c6a664;
-    color: white;
-    border-radius: 25px;
-    font-weight: 500;
-    transition: background 0.3s;
-}
-.btn:hover {
-    background-color: #a57c00;
+.price .original {
+    text-decoration: line-through;
+    color: red;
+    vertical-align: middle;
 }
 
 /* ====== FOOTER ====== */
 footer {
-    background-color: #3b2f2f;
+    background-color: var(--dark-brown);
     color: #f5f5f5;
     text-align: center;
     padding: 1.5rem;
@@ -189,7 +205,14 @@ footer {
 }
 
 footer a {
-    color: #c6a664;
+    color: var(--primary-gold);
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: underline;
 }
 
 /* ====== ANIMATIONS ====== */
@@ -198,16 +221,61 @@ footer a {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ====== RESPONSIVE ====== */
-@media (max-width: 768px) {
+/* ====== ACCESSIBILITY ====== */
+@media (prefers-reduced-motion: reduce) {
     .hero-content {
-        max-width: 90%;  /* Makes the content more flexible on mobile */
-        padding: 1.5rem;  /* Reduces padding on mobile */
+        animation: none;
+    }
+    .jewelry-item:hover {
+        transform: none;
+    }
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+    .hero-content {
+        max-width: 400px;
+        padding: 1.5rem;
     }
     .hero h1 {
-        font-size: 2.2rem;  /* Makes the heading a bit smaller */
+        font-size: 2rem;
     }
-    .cta-button {
-        padding: 0.7rem 1.6rem;  /* Adjust button padding */
+    .hero p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+    .hero-content {
+        max-width: 85%;
+        padding: 1rem;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    .hero p {
+        font-size: 0.85rem;
+    }
+    .jewelry-grid {
+        grid-template-columns: 1fr;
     }
 }
